@@ -1,0 +1,10 @@
+<div class="card comments m-2 p-2" style="width: 18rem;">
+  {{#each this}}
+  <section class="comment">
+    <div class="card-body">
+      <h5 class="card-title text">{{comment_text}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted text-info">{{user.username}} on {{format_date created_at}}</h6>
+    </div>
+  </section>
+  {{/each}}
+</div>
