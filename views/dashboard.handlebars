@@ -1,0 +1,24 @@
+{{#if posts.length}}
+<section class="m-2 p-2">
+    <h3 class="navFont my-4">Your Posts:</h3>
+    {{#each posts as |post|}}
+    <div class="card post" style="width: 18rem;">
+        <div class="card-body title">
+            <h4 class="card-title"><a href="/dashboard/edit/{{post.id}}" class="edit-link text-dark textFont">{{title}}</a></h4>
+            <h5></h5><p class="card-text text-muted">{{format_url post_url}}</p></h5>
+            <a class="card-link"><a href="/post/{{id}}" class="text-info textFont">{{comments.length}}
+                    {{format_plural "comment" comments.length}}</a></a>
+        </div>
+        {{/each}}
+    </div>
+</section>
+{{else}}
+<h2 class="textFont">No posts yet, add one now!</h2>
+{{/if}}
+
+</br>
+<button type="submit" class="btn btn-info m-2 p-2"><a class="link text-white" href="/dashboard/new">add a new
+        post</a></button>
+</br>
+
+<script src="/javascript/add-post.js"></script>

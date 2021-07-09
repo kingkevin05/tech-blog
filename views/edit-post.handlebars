@@ -1,0 +1,30 @@
+<article class="m-2 p-2">
+<a class="text-info textFont" href="/dashboard"> &larr; Back to dashboard</a>
+<h2 class="navFont">
+  Edit Post
+</h2>
+<form class="edit-post-form">
+  <div class="form-group">
+    <label for="post-title" class="form-label">title</label>
+    <input name="post-title" type="text" class="form-control" value="{{post.title}}">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="post">content</label>
+    <input name="post-url" type="text" class="form-control" value="{{post.post_url}}">
+  </div>
+  <div>
+    <a class="text-info textFont" href="/post/{{post.id}}">{{post.comments.length}}
+      {{format_plural "comment" post.comments.length}}</a>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-outline-info">save post</button>
+    <button type="button" class="btn btn-outline-info delete-post-btn">delete post</button>
+  </div>
+  </form>
+  </article>
+  </br>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
